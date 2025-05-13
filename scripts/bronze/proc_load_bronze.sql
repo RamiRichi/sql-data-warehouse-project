@@ -41,7 +41,7 @@ BEGIN
 			TABLOCK
 		);
 		SET @end_time = GETDATE();
-		PRINT 'The Duration: ' + CAST(DATEDIFF(SECOND, @start_time, @end_time) AS NVARCHAR) + 'Seconds';
+		PRINT 'Load Duration: ' + CAST(DATEDIFF(second, @start_time, @end_time) AS NVARCHAR) + ' seconds';
 		PRINT '-------------';
 		SET @start_time = GETDATE();
 		PRINT '>>Truncating Table: bronze.crm_prd_info <<';
@@ -55,7 +55,7 @@ BEGIN
 			TABLOCK
 		);
 		SET @end_time = GETDATE();
-		PRINT 'The Duration: ' + CAST(DATEDIFF(SECOND, @start_time, @end_time) AS NVARCHAR) + 'Seconds';
+		PRINT 'Load Duration: ' + CAST(DATEDIFF(Second, @start_time, @end_time) AS NVARCHAR) + ' seconds';
 		PRINT '-------------';
 		SET @start_time = GETDATE();
 		PRINT '>>Truncating Table: bronze.crm_sales_details <<';
@@ -69,7 +69,7 @@ BEGIN
 			TABLOCK
 		);
 		SET @end_time = GETDATE();
-		PRINT 'The Duration: ' + CAST(DATEDIFF(SECOND, @start_time, @end_time) AS NVARCHAR) + 'Seconds';
+		PRINT 'Load Duration: ' + CAST(DATEDIFF(second, @start_time, @end_time) AS NVARCHAR) + ' seconds';
 		PRINT '-------------';
 		PRINT '-------------------------------------------------';
 		PRINT 'Loading ERP Tables';
@@ -86,7 +86,7 @@ BEGIN
 			TABLOCK
 		);
 		SET @end_time = GETDATE();
-		PRINT 'The Duration: ' + CAST(DATEDIFF(SECOND, @start_time, @end_time) AS NVARCHAR) + 'Seconds';
+		PRINT 'Load Duration: ' + CAST(DATEDIFF(second, @start_time, @end_time) AS NVARCHAR) + ' seconds';
 		PRINT '-------------';
 		SET @start_time = GETDATE();
 		PRINT '>>Truncating Table: bronze.erp_loc_a101 <<';
@@ -100,7 +100,7 @@ BEGIN
 			TABLOCK
 		);
 		SET @end_time = GETDATE();
-		PRINT 'The Duration: ' + CAST(DATEDIFF(SECOND, @start_time, @end_time) AS NVARCHAR) + 'Seconds';
+		PRINT 'Load Duration: ' + CAST(DATEDIFF(second, @start_time, @end_time) AS NVARCHAR) + ' seconds';
 		PRINT '-------------';
 		SET @start_time = GETDATE();
 		PRINT '>>Truncating Table: bronze.erp_px_cat_g1v2 <<';
@@ -114,12 +114,12 @@ BEGIN
 			TABLOCK
 		);
 		SET @end_time = GETDATE();
-		PRINT 'The Duration: ' + CAST(DATEDIFF(SECOND, @start_time, @end_time) AS NVARCHAR) + 'Seconds';
+		PRINT 'Load Duration: ' + CAST(DATEDIFF(second, @start_time, @end_time) AS NVARCHAR) + ' seconds';
 		PRINT '-------------';
 		SET @batch_end_time = GETDATE();
 		PRINT '===============================================';
 		PRINT'Loading The Bronze Layer is Completed';
-		PRINT 'Total Load Duration: ' + CAST(DATEDIFF(SECOND, @batch_start_time, @batch_end_time) AS NVARCHAR) + 'Seconds';
+		PRINT 'Total Load Duration: ' + CAST(DATEDIFF(second, @batch_start_time, @batch_end_time) AS NVARCHAR) + ' seconds';
 	END TRY
 	BEGIN CATCH
 		PRINT '===============================================';
